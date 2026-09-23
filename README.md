@@ -3,8 +3,8 @@ Repositorio para el cuarto taller del curso de Lógica de Programación, enfocad
 > [!NOTE]
 > Para poder ver y ejecutar el codigo de este repositorio correctamente se debe tener instalado tanto el JDK, como VSCode con los correspondientes complementos de Java en el equipo. Esto se explicaRÁ mas a fondo en este README.
 ## Integrantes del trabajo
-- 
-- 
+- Loren
+- Juanpi 
 - Matías Múnera (matias.muneram.col@upb.edu.co)
 ## Metas para el trabajo
 ## Archivos del repositorio
