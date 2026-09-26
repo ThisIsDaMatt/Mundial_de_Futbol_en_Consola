@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class posiciones {
 
-    // Constantes para los índices de columna (así no hay que memorizar números)
     static final int PJ = 0, PG = 1, PE = 2, PP = 3, GF = 4, GC = 5, DG = 6, TA = 7, TR = 8, PTS = 9;
 
     public static void main(String[] args) {
@@ -18,8 +17,10 @@ public class posiciones {
         };
         int n = equipos.length; // 48
 
-        // Matriz de estadísticas: n filas, 10 columnas
         int[][] stats = new int[n][10];
+
+        int[][] historial = new int[500][4];
+        int[] numPartidos = {0};
 
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
@@ -29,18 +30,22 @@ public class posiciones {
             System.out.println("1. Registrar resultado de un partido");
             System.out.println("2. Ver tabla de posiciones");
             System.out.println("3. Salir");
+            System.out.println("4. Corregir un partido ya registrado");
             System.out.print("Elige una opcion: ");
             int opcion = sc.nextInt();
 
             switch (opcion) {
                 case 1:
-                    registrarPartidoDesdeTeclado(sc, equipos, stats);
+                    registrarPartidoDesdeTeclado(sc, equipos, stats, historial, numPartidos);
                     break;
                 case 2:
                     imprimirTabla(sc, equipos, stats);
                     break;
                 case 3:
                     salir = true;
+                    break;
+                case 4:
+                    corregirPartido(sc, equipos, stats, historial, numPartidos);
                     break;
                 default:
                     System.out.println("Opcion invalida.");
@@ -50,24 +55,22 @@ public class posiciones {
         System.out.println("Programa finalizado.");
     }
 
-    // Muestra la lista de equipos con su indice, para que el usuario sepa cual escribir
     static void mostrarEquiposConIndice(String[] equipos) {
         for (int i = 0; i < equipos.length; i++) {
             System.out.printf("%2d - %s%n", i + 1, equipos[i]);
         }
     }
 
-    // Pide por teclado los dos equipos y el marcador, valida y actualiza la matriz
-    static void registrarPartidoDesdeTeclado(Scanner sc, String[] equipos, int[][] stats) {
+    static void registrarPartidoDesdeTeclado(Scanner sc, String[] equipos, int[][] stats, int[][] historial, int[] numPartidos) {
         mostrarEquiposConIndice(equipos);
 
-        System.out.print("Número del equipo 1: ");
-        int i = sc.nextInt();
-        System.out.print("Número del equipo 2: ");
-        int j = sc.nextInt();
+        System.out.print("Número del equipo 1 (1 a " + equipos.length + "): ");
+        int i = sc.nextInt() - 1;
+        System.out.print("Número del equipo 2 (1 a " + equipos.length + "): ");
+        int j = sc.nextInt() - 1;
 
         if (i < 0 || i >= equipos.length || j < 0 || j >= equipos.length || i == j) {
-            System.out.println("Indices invalidos.");
+            System.out.println("Numeros invalidos.");
             return;
         }
 
@@ -76,11 +79,65 @@ public class posiciones {
         System.out.print("Goles de " + equipos[j] + ": ");
         int golesJ = sc.nextInt();
 
+        int p = numPartidos[0];
+        historial[p][0] = i;
+        historial[p][1] = j;
+        historial[p][2] = golesI;
+        historial[p][3] = golesJ;
+        numPartidos[0]++;
+
         registrarPartido(stats, i, j, golesI, golesJ);
         System.out.println("El resultado ha sido registrado.");
     }
 
-    // Actualiza la matriz cuando se juega un partido entre el equipo i y el equipo j
+    static void corregirPartido(Scanner sc, String[] equipos, int[][] stats, int[][] historial, int[] numPartidos) {
+        if (numPartidos[0] == 0) {
+            System.out.println("Todavia no hay partidos registrados.");
+            return;
+        }
+
+        for (int p = 0; p < numPartidos[0]; p++) {
+            int eq1 = historial[p][0];
+            int eq2 = historial[p][1];
+            System.out.printf("%2d - %s %d - %d %s%n", p + 1, equipos[eq1], historial[p][2], historial[p][3], equipos[eq2]);
+        }
+
+        System.out.print("Numero del partido a corregir: ");
+        int p = sc.nextInt() - 1;
+
+        if (p < 0 || p >= numPartidos[0]) {
+            System.out.println("Numero invalido.");
+            return;
+        }
+
+        System.out.print("Nuevos goles de " + equipos[historial[p][0]] + ": ");
+        int nuevosGolesI = sc.nextInt();
+        System.out.print("Nuevos goles de " + equipos[historial[p][1]] + ": ");
+        int nuevosGolesJ = sc.nextInt();
+
+        historial[p][2] = nuevosGolesI;
+        historial[p][3] = nuevosGolesJ;
+
+        recalcularEstadisticas(stats, historial, numPartidos[0]);
+        System.out.println("Partido corregido y estadisticas recalculadas.");
+    }
+
+    static void recalcularEstadisticas(int[][] stats, int[][] historial, int totalPartidos) {
+        for (int i = 0; i < stats.length; i++) {
+            for (int j = 0; j < stats[i].length; j++) {
+                stats[i][j] = 0;
+            }
+        }
+
+        for (int p = 0; p < totalPartidos; p++) {
+            int eqI = historial[p][0];
+            int eqJ = historial[p][1];
+            int golesI = historial[p][2];
+            int golesJ = historial[p][3];
+            registrarPartido(stats, eqI, eqJ, golesI, golesJ);
+        }
+    }
+
     static void registrarPartido(int[][] stats, int i, int j, int golesI, int golesJ) {
         actualizarEquipo(stats, i, golesI, golesJ);
         actualizarEquipo(stats, j, golesJ, golesI);
@@ -103,7 +160,6 @@ public class posiciones {
         stats[idx][PTS] = stats[idx][PG] * 3 + stats[idx][PE];
     }
 
-    // Ordena los equipos de mayor a menor segun sus puntos (bubble sort)
     static void ordenarPorPuntos(String[] equipos, int[][] stats) {
         int n = equipos.length;
         for (int i = 0; i < n - 1; i++) {
@@ -114,7 +170,6 @@ public class posiciones {
                     equipos[j] = equipos[j + 1];
                     equipos[j + 1] = tempNombre;
 
-                    // Intercambia toda la fila de estadisticas
                     int[] tempFila = stats[j];
                     stats[j] = stats[j + 1];
                     stats[j + 1] = tempFila;
@@ -123,7 +178,6 @@ public class posiciones {
         }
     }
 
-    // Encuentra la longitud del nombre de equipo más largo, para que la tabla no se desalinee
     static int calcularAnchoNombre(String[] equipos) {
         int max = 0;
         for (String nombre : equipos) {
@@ -134,10 +188,9 @@ public class posiciones {
         return max + 1; // +1 de margen
     }
 
-    // Imprime la matriz como tabla formateada, paginando cada "porPagina" filas
     static void imprimirTabla(Scanner sc, String[] equipos, int[][] stats) {
         ordenarPorPuntos(equipos, stats);
-        sc.nextLine(); // limpia el salto de linea que quedó pendiente de nextInt()
+        sc.nextLine(); 
         int porPagina = 10;
         int anchoNombre = calcularAnchoNombre(equipos);
 
