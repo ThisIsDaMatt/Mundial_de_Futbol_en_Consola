@@ -169,6 +169,7 @@ public class FlagStandardOP{
             }
 
             /* ---------- Dibujar la bandera ---------- */
+            System.out.println("Escogiste: " + paises[flag -1]);
             if (inicioFila[flag - 1] == 0) {
                 System.out.println("Todavía no hay bandera cargada para " + paises[flag - 1]);
             } else {
