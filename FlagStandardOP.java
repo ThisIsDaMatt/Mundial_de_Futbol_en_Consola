@@ -24,7 +24,7 @@ public class FlagStandardOP{
         {10, 15},  // 1. Grande (tamaño original)
         {6, 9},    // 2. Mediano
         {4, 6},    // 3. Pequeño
-        {2, 3}     // 4. Ícono
+        {3, 3}     // 4. Ícono
     };
 
     // Las banderas del CSV siempre son de 10 filas x 15 columnas
@@ -169,7 +169,6 @@ public class FlagStandardOP{
             }
 
             /* ---------- Dibujar la bandera ---------- */
-            System.out.println("Escogiste: " + paises[flag -1]);
             if (inicioFila[flag - 1] == 0) {
                 System.out.println("Todavía no hay bandera cargada para " + paises[flag - 1]);
             } else {
@@ -181,7 +180,7 @@ public class FlagStandardOP{
                     System.out.println("| " + (i + 1) + "\t| " + NOMBRES_TAMANO[i] + " (" + TAMANOS[i][0] + "x" + TAMANOS[i][1] + ")");
                 }
                 System.out.println("+------+---------------------------+");
-
+                System.out.println("Escogiste: " + paises[flag -1]);
                 int tamano = 0;
                 while (tamano < 1 || tamano > TAMANOS.length) {
                     System.out.print("Ingresa un número de tamaño (1-" + TAMANOS.length + "): ");
