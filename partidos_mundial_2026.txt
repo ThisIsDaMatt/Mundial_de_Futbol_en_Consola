@@ -1,0 +1,104 @@
+M1|15:00|México|2-0|Sudáfrica
+M2|22:00|Corea Sur|2-1|Chequia
+M3|15:00|Canadá|1-1|Bosnia
+M4|21:00|EE. UU.|4-1|Paraguay
+M5|21:00|Haití|0-1|Escocia
+M6|00:00|Australia|2-0|Turquía
+M7|18:00|Brasil|1-1|Marruecos
+M8|15:00|Qatar|1-1|Suiza
+M9|19:00|C. Marfil|1-0|Ecuador
+M10|13:00|Alemania|7-1|Curazao
+M11|16:00|P. Bajos|2-2|Japón
+M12|22:00|Suecia|5-1|Túnez
+M13|18:00|Arabia S.|1-1|Uruguay
+M14|12:00|España|0-0|Cabo Verde
+M15|21:00|Irán|2-2|N. Zelanda
+M16|15:00|Bélgica|1-1|Egipto
+M17|15:00|Francia|3-1|Senegal
+M18|18:00|Iraq|1-4|Noruega
+M19|21:00|Argentina|3-0|Argelia
+M20|00:00|Austria|3-1|Jordania
+M21|19:00|Ghana|1-0|Panamá
+M22|16:00|Inglaterra|4-2|Croacia
+M23|13:00|Portugal|1-1|DR Congo
+M24|22:00|Uzbekistán|1-3|Colombia
+M25|12:00|Chequia|1-1|Sudáfrica
+M26|15:00|Suiza|4-1|Bosnia
+M27|18:00|Canadá|6-0|Qatar
+M28|21:00|México|1-0|Corea Sur
+M29|20:30|Brasil|3-0|Haití
+M30|18:00|Escocia|0-1|Marruecos
+M31|23:00|Turquía|0-1|Paraguay
+M32|15:00|EE. UU.|2-0|Australia
+M33|16:00|Alemania|2-1|C. Marfil
+M34|20:00|Ecuador|0-0|Curazao
+M35|13:00|P. Bajos|5-1|Suecia
+M36|00:00|Túnez|0-4|Japón
+M37|18:00|Uruguay|2-2|Cabo Verde
+M38|12:00|España|4-0|Arabia S.
+M39|15:00|Bélgica|0-0|Irán
+M40|21:00|N. Zelanda|1-3|Egipto
+M41|20:00|Noruega|3-2|Senegal
+M42|17:00|Francia|3-0|Iraq
+M43|13:00|Argentina|2-0|Austria
+M44|23:00|Jordania|1-2|Argelia
+M45|16:00|Inglaterra|0-0|Ghana
+M46|19:00|Panamá|0-1|Croacia
+M47|13:00|Portugal|5-0|Uzbekistán
+M48|22:00|Colombia|1-0|DR Congo
+M49|18:00|Escocia|0-3|Brasil
+M50|18:00|Marruecos|4-2|Haití
+M51|15:00|Suiza|2-1|Canadá
+M52|15:00|Bosnia|3-1|Qatar
+M53|21:00|Chequia|0-3|México
+M54|21:00|Sudáfrica|1-0|Corea Sur
+M55|16:00|Curazao|0-2|C. Marfil
+M56|16:00|Ecuador|2-1|Alemania
+M57|19:00|Japón|1-1|Suecia
+M58|19:00|Túnez|1-3|P. Bajos
+M59|22:00|Turquía|3-2|EE. UU.
+M60|22:00|Paraguay|0-0|Australia
+M61|15:00|Noruega|1-4|Francia
+M62|15:00|Senegal|5-0|Iraq
+M63|23:00|Egipto|1-1|Irán
+M64|23:00|N. Zelanda|1-5|Bélgica
+M65|20:00|Cabo Verde|0-0|Arabia S.
+M66|20:00|Uruguay|0-1|España
+M67|17:00|Panamá|0-2|Inglaterra
+M68|17:00|Croacia|2-1|Ghana
+M69|22:00|Argelia|3-3|Austria
+M70|22:00|Jordania|1-3|Argentina
+M71|19:30|Colombia|0-0|Portugal
+M72|19:30|DR Congo|3-1|Uzbekistán
+M73|15:00|Sudáfrica|0-1|Canadá
+M74|16:30|Alemania|1-1 (3-4 pen)|Paraguay
+M75|21:00|P. Bajos|1-1 (2-3 pen)|Marruecos
+M76|13:00|Brasil|2-1|Japón
+M77|17:00|Francia|3-0|Suecia
+M78|13:00|C. Marfil|1-2|Noruega
+M79|22:00|México|2-0|Ecuador
+M80|12:00|Inglaterra|2-1|DR Congo
+M81|20:00|EE. UU.|2-0|Bosnia
+M82|16:00|Bélgica|3-2|Senegal
+M83|19:00|Portugal|2-1|Croacia
+M84|15:00|España|3-0|Austria
+M85|23:00|Suiza|2-0|Argelia
+M86|18:00|Argentina|3-2|Cabo Verde
+M87|21:30|Colombia|1-0|Ghana
+M88|14:00|Australia|1-1 (2-4 pen)|Egipto
+M89|17:00|Paraguay|0-1|Francia
+M90|13:00|Canadá|0-3|Marruecos
+M91|16:00|Brasil|1-2|Noruega
+M92|21:00|México|2-3|Inglaterra
+M93|15:00|Portugal|0-1|España
+M94|20:00|EE. UU.|1-4|Bélgica
+M95|12:00|Argentina|3-2|Egipto
+M96|16:00|Suiza|0-0 (4-3 pen)|Colombia
+M97|16:00|Francia|2-0|Marruecos
+M98|15:00|España|2-1|Bélgica
+M99|17:00|Noruega|1-2|Inglaterra
+M100|21:00|Argentina|3-1|Suiza
+M101|15:00|Francia|0-2|España
+M102|15:00|Inglaterra|1-2|Argentina
+M103|17:00|Francia|4-6|Inglaterra
+M104|15:00|España|1-0|Argentina

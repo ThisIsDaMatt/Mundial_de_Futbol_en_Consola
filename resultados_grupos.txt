@@ -1,0 +1,5 @@
+M3|Canadá|Bosnia|2|1
+M5|Haití|Escocia|1|2
+M17|Francia|Senegal|1|0
+M19|Argentina|Argelia|3|1
+M25|Chequia|Sudáfrica|3|2
