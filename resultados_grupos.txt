@@ -1,5 +1,72 @@
+M1|México|Sudáfrica|8|5
+M2|Corea Sur|Chequia|5|6
 M3|Canadá|Bosnia|2|1
+M4|EE. UU.|Paraguay|2|3
 M5|Haití|Escocia|1|2
-M17|Francia|Senegal|1|0
+M6|Australia|Turquía|54|2
+M7|Brasil|Marruecos|4|7
+M8|Qatar|Suiza|4|8
+M9|C. Marfil|Ecuador|3|9
+M10|Alemania|Curazao|5|8
+M11|P. Bajos|Japón|5|7
+M12|Suecia|Túnez|8|7
+M13|Arabia S.|Uruguay|5|4
+M14|España|Cabo Verde|3|5
+M15|Irán|N. Zelanda|3|2
+M16|Bélgica|Egipto|6|5
+M17|Francia|Senegal|8|9
+M18|Iraq|Noruega|4|3
 M19|Argentina|Argelia|3|1
+M20|Austria|Jordania|7|8
+M21|Ghana|Panamá|6|4
+M22|Inglaterra|Croacia|5|4
+M23|Portugal|DR Congo|5|3
+M24|Uzbekistán|Colombia|6|7
 M25|Chequia|Sudáfrica|3|2
+M26|Suiza|Bosnia|3|8
+M27|Canadá|Qatar|2|6
+M28|México|Corea Sur|2|8
+M29|Brasil|Haití|1|7
+M30|Escocia|Marruecos|4|3
+M31|Turquía|Paraguay|8|6
+M32|EE. UU.|Australia|2|7
+M33|Alemania|C. Marfil|5|2
+M34|Ecuador|Curazao|6|3
+M35|P. Bajos|Suecia|7|5
+M36|Túnez|Japón|3|6
+M37|Uruguay|Cabo Verde|7|8
+M38|España|Arabia S.|5|2
+M39|Bélgica|Irán|3|6
+M40|N. Zelanda|Egipto|9|5
+M41|Noruega|Senegal|2|6
+M42|Francia|Iraq|9|5
+M43|Argentina|Austria|2|1
+M44|Jordania|Argelia|4|5
+M45|Inglaterra|Ghana|8|7
+M46|Panamá|Croacia|5|9
+M47|Portugal|Uzbekistán|6|3
+M48|Colombia|DR Congo|2|1
+M49|Escocia|Brasil|2|6
+M50|Marruecos|Haití|5|9
+M51|Suiza|Canadá|5|6
+M52|Bosnia|Qatar|3|2
+M53|Chequia|México|1|4
+M54|Sudáfrica|Corea Sur|5|6
+M55|Curazao|C. Marfil|5|8
+M56|Ecuador|Alemania|9|6
+M57|Japón|Suecia|5|2
+M58|Túnez|P. Bajos|1|4
+M59|Turquía|EE. UU.|7|5
+M60|Paraguay|Australia|8|9
+M61|Noruega|Francia|6|3
+M62|Senegal|Iraq|2|6
+M63|Egipto|Irán|9|6
+M64|N. Zelanda|Bélgica|2|1
+M65|Cabo Verde|Arabia S.|5|2
+M66|Uruguay|España|3|6
+M67|Panamá|Inglaterra|6|5
+M68|Croacia|Ghana|65|26
+M69|Argelia|Austria|6|9
+M70|Jordania|Argentina|55|95
+M71|Colombia|Portugal|24|29
+M72|DR Congo|Uzbekistán|9|29

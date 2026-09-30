@@ -4,12 +4,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class fixture {
+public class Partidos {
 	private static final Scanner SCANNER = new Scanner(System.in);
 	private static final int PARTIDOS_DE_GRUPOS = 72;
 	private static final String ARCHIVO_RESULTADOS = "resultados_grupos.txt";
