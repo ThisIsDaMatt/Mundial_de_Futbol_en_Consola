@@ -1,13 +1,13 @@
 public class Fechas {
     public static void main(String[] args) {
-        String sep = "+-------+------------------+----------------------------------+--------------------+----------------------------------------+";
+        String rayita = "+-------+------------------+----------------------------------+--------------------+----------------------------------------+";
 
         System.out.println("COPA MUNDIAL FIFA 2026  |  Calendario oficial previo al torneo");
         System.out.println("Horarios en hora de Colombia (UTC-5)  |  104 partidos");
         System.out.println("Eliminatorias: cruces FIFA (1A, 2B, 3.o de grupos, Ganador Mxx)");
-        System.out.println(sep);
+        System.out.println(rayita);
         System.out.println("| N     | Fecha y hora COL | Equipos                          | Fase               | Estadio                                |");
-        System.out.println(sep);
+        System.out.println(rayita);
 
         System.out.println("| 1     | 11/06 14:00      | Mexico vs Sudafrica              | Fase de grupos     | Estadio Azteca (Ciudad de Mexico)      |");
         System.out.println("| 2     | 11/06 21:00      | Corea del Sur vs Chequia         | Fase de grupos     | Estadio Akron (Guadalajara)            |");
@@ -117,7 +117,7 @@ public class Fechas {
         System.out.println("| 103   | 18/07 16:00      | Perdedor M101 vs Perdedor M102   | Tercer puesto      | Hard Rock Stadium (Miami)              |");
         System.out.println("| 104   | 19/07 14:00      | Ganador M101 vs Ganador M102     | Final              | MetLife Stadium (Nueva York/NJ)        |");
 
-        System.out.println(sep);
+        System.out.println(rayita);
         System.out.println("Notacion eliminatorias:");
         System.out.println("  1A = 1.o Grupo A    2B = 2.o Grupo B");
         System.out.println("  3.o A/B/C/D/F = mejor 3.o entre esos grupos (segun tabla FIFA)");
