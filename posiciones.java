@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -6,7 +8,7 @@ public class posiciones {
 
     static final int PJ = 0, PG = 1, PE = 2, PP = 3, GF = 4, GC = 5, DG = 6, TA = 7, TR = 8, PTS = 9;
 
-    public static void posiciones() {
+    public static void posiciones() throws IOException {
         String[] equipos = {
                 "Inglaterra", "España", "Francia", "Cabo Verde", "Estados Unidos", "Argentina",
                 "Brasil", "Canadá", "Alemania", "Japón", "Colombia", "Bélgica", "Suiza", "Portugal",
@@ -19,10 +21,9 @@ public class posiciones {
         };
         int n = equipos.length; // 48
 
-        int[][] stats = new int[n][10];
-
-        int[][] historial = new int[500][4];
-        int[] numPartidos = { 0 };
+        int[][] stats = getTabla();
+        int[][] historial = getHistorial();
+        int numPartidos = getNumPartidos();
 
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
@@ -39,15 +40,45 @@ public class posiciones {
             switch (opcion) {
                 case 1:
                     registrarPartidoDesdeTeclado(sc, equipos, stats, historial, numPartidos);
+
+                    numPartidos = numPartidos + 1;
+
+                    escribirTabla(stats);
+
+                    escribirHistorial(historial);
+
+                    escribirNumeroPartidos(numPartidos);
+
                     break;
                 case 2:
                     imprimirTabla(sc, equipos, stats);
+
+                    escribirTabla(stats);
+
+                    escribirHistorial(historial);
+
+                    escribirNumeroPartidos(numPartidos);
+
                     break;
                 case 3:
                     corregirPartido(sc, equipos, stats, historial, numPartidos);
+
+                    escribirTabla(stats);
+
+                    escribirHistorial(historial);
+
+                    escribirNumeroPartidos(numPartidos);
+
                     break;
                 case 4:
+                    escribirTabla(stats);
+
+                    escribirHistorial(historial);
+
+                    escribirNumeroPartidos(numPartidos);
+
                     salir = true;
+
                     break;
                 default:
                     System.out.println("Opcion invalida.");
@@ -64,7 +95,7 @@ public class posiciones {
     }
 
     static void registrarPartidoDesdeTeclado(Scanner sc, String[] equipos, int[][] stats, int[][] historial,
-            int[] numPartidos) {
+            int numPartidos) {
         mostrarEquiposConIndice(equipos);
 
         System.out.print("Número del equipo 1 (1 a " + equipos.length + "): ");
@@ -82,24 +113,23 @@ public class posiciones {
         System.out.print("Goles de " + equipos[j] + ": ");
         int golesJ = sc.nextInt();
 
-        int p = numPartidos[0];
+        int p = numPartidos;
         historial[p][0] = i;
         historial[p][1] = j;
         historial[p][2] = golesI;
         historial[p][3] = golesJ;
-        numPartidos[0]++;
 
         registrarPartido(stats, i, j, golesI, golesJ);
         System.out.println("El resultado ha sido registrado.");
     }
 
-    static void corregirPartido(Scanner sc, String[] equipos, int[][] stats, int[][] historial, int[] numPartidos) {
-        if (numPartidos[0] == 0) {
+    static void corregirPartido(Scanner sc, String[] equipos, int[][] stats, int[][] historial, int numPartidos) {
+        if (numPartidos == 0) {
             System.out.println("Todavia no hay partidos registrados.");
             return;
         }
 
-        for (int p = 0; p < numPartidos[0]; p++) {
+        for (int p = 0; p < numPartidos; p++) {
             int eq1 = historial[p][0];
             int eq2 = historial[p][1];
             System.out.printf("%2d - %s %d - %d %s%n", p + 1, equipos[eq1], historial[p][2], historial[p][3],
@@ -109,7 +139,7 @@ public class posiciones {
         System.out.print("Numero del partido a corregir: ");
         int p = sc.nextInt() - 1;
 
-        if (p < 0 || p >= numPartidos[0]) {
+        if (p < 0 || p >= numPartidos) {
             System.out.println("Numero invalido.");
             return;
         }
@@ -122,7 +152,7 @@ public class posiciones {
         historial[p][2] = nuevosGolesI;
         historial[p][3] = nuevosGolesJ;
 
-        recalcularEstadisticas(stats, historial, numPartidos[0]);
+        recalcularEstadisticas(stats, historial, numPartidos);
         System.out.println("Partido corregido y estadisticas recalculadas.");
     }
 
@@ -234,7 +264,7 @@ public class posiciones {
         FileWriter fw = new FileWriter("./posiciones.csv");
 
         String[][] tablaEscribir = new String[tabla.length][tabla[0].length];
-        String[] lineas = new String[48];
+        String[] lineas = new String[tabla.length];
 
         for (int i = 0; i < tabla.length; i++) {
             for (int j = 0; j < tabla[0].length; j++) {
@@ -251,5 +281,87 @@ public class posiciones {
         fw.write(archivo);
 
         fw.close();
+    }
+
+    public static int[][] getTabla() throws FileNotFoundException {
+
+        Scanner sc = new Scanner(new File("./posiciones.csv"));
+
+        int[][] tabla = new int[48][10];
+
+        for (int i = 0; i < 48; i++) {
+
+            String[] lineaActual = sc.nextLine().split(",");
+
+            for (int j = 0; j < 10; j++) {
+                tabla[i][j] = Integer.parseInt(lineaActual[j]);
+            }
+        }
+
+        sc.close();
+
+        return tabla;
+    }
+
+    public static void escribirHistorial(int[][] tabla) throws IOException {
+        FileWriter fw = new FileWriter("./historial.csv");
+
+        String[][] tablaEscribir = new String[tabla.length][tabla[0].length];
+        String[] lineas = new String[tabla.length];
+
+        for (int i = 0; i < tabla.length; i++) {
+            for (int j = 0; j < tabla[0].length; j++) {
+                tablaEscribir[i][j] = "" + tabla[i][j];
+            }
+        }
+
+        for (int i = 0; i < tablaEscribir.length; i++) {
+            lineas[i] = String.join(",", tablaEscribir[i]);
+        }
+
+        String archivo = String.join("\n", lineas);
+
+        fw.write(archivo);
+
+        fw.close();
+    }
+
+    public static int[][] getHistorial() throws FileNotFoundException {
+
+        Scanner sc = new Scanner(new File("./historial.csv"));
+
+        int[][] tabla = new int[500][4];
+
+        for (int i = 0; i < 500; i++) {
+
+            String[] lineaActual = sc.nextLine().split(",");
+
+            for (int j = 0; j < 4; j++) {
+                tabla[i][j] = Integer.parseInt(lineaActual[j]);
+            }
+        }
+
+        sc.close();
+
+        return tabla;
+    }
+
+    public static void escribirNumeroPartidos(int num) throws IOException {
+        FileWriter fw = new FileWriter("./numPartidos.txt");
+
+        fw.write(String.valueOf(num));
+
+        fw.close();
+    }
+
+    public static int getNumPartidos() throws FileNotFoundException {
+
+        Scanner sc = new Scanner(new File("./numPartidos.txt"));
+
+        int numPartidos = Integer.parseInt(sc.nextLine());
+
+        sc.close();
+
+        return numPartidos;
     }
 }

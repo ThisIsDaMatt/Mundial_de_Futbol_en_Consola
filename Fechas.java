@@ -1,5 +1,5 @@
 public class Fechas {
-    public static void main(String[] args) {
+    public static void fecha() {
         String rayita = "+-------+------------------+----------------------------------+--------------------+----------------------------------------+";
 
         System.out.println("COPA MUNDIAL FIFA 2026  |  Calendario oficial previo al torneo");
