@@ -1,26 +1,28 @@
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class posiciones {
 
     static final int PJ = 0, PG = 1, PE = 2, PP = 3, GF = 4, GC = 5, DG = 6, TA = 7, TR = 8, PTS = 9;
 
-    public static void main(String[] args) {
+    public static void posiciones() {
         String[] equipos = {
-            "Inglaterra", "España", "Francia", "Cabo Verde", "Estados Unidos", "Argentina",
-            "Brasil", "Canadá", "Alemania", "Japón", "Colombia", "Bélgica", "Suiza", "Portugal",
-            "Egipto", "Paraguay", "México", "Marruecos", "Austria", "Noruega", "Croacia",
-            "Paises Bajos", "Uruguay", "Qatar", "Sudafrica", "Corea del Sur", "Chequia",
-            "Bosnia y Herzegovina", "Escocia", "Haiti", "Turquia", "Australia", "Curazao",
-            "Costa de Marfil", "Ecuador", "Suecia", "Túnez", "Nueva Zelanda", "Irán",
-            "Arabia Saudita", "Argelia", "Jordania", "Congo RD", "Uzbekistan", "Panamá",
-            "Ghana", "Irak", "Senegal"
+                "Inglaterra", "España", "Francia", "Cabo Verde", "Estados Unidos", "Argentina",
+                "Brasil", "Canadá", "Alemania", "Japón", "Colombia", "Bélgica", "Suiza", "Portugal",
+                "Egipto", "Paraguay", "México", "Marruecos", "Austria", "Noruega", "Croacia",
+                "Paises Bajos", "Uruguay", "Qatar", "Sudafrica", "Corea del Sur", "Chequia",
+                "Bosnia y Herzegovina", "Escocia", "Haiti", "Turquia", "Australia", "Curazao",
+                "Costa de Marfil", "Ecuador", "Suecia", "Túnez", "Nueva Zelanda", "Irán",
+                "Arabia Saudita", "Argelia", "Jordania", "Congo RD", "Uzbekistan", "Panamá",
+                "Ghana", "Irak", "Senegal"
         };
         int n = equipos.length; // 48
 
         int[][] stats = new int[n][10];
 
         int[][] historial = new int[500][4];
-        int[] numPartidos = {0};
+        int[] numPartidos = { 0 };
 
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
@@ -29,9 +31,9 @@ public class posiciones {
             System.out.println("\n=== MENU ===");
             System.out.println("1. Registrar resultado de un partido");
             System.out.println("2. Ver tabla de posiciones");
-            System.out.println("3. Salir");
-            System.out.println("4. Corregir un partido ya registrado");
-            System.out.print("Elige una opcion: ");
+            System.out.println("3. Corregir un partido ya registrado");
+            System.out.println("4. Salir");
+            System.out.print("Elige una opción: ");
             int opcion = sc.nextInt();
 
             switch (opcion) {
@@ -42,10 +44,10 @@ public class posiciones {
                     imprimirTabla(sc, equipos, stats);
                     break;
                 case 3:
-                    salir = true;
+                    corregirPartido(sc, equipos, stats, historial, numPartidos);
                     break;
                 case 4:
-                    corregirPartido(sc, equipos, stats, historial, numPartidos);
+                    salir = true;
                     break;
                 default:
                     System.out.println("Opcion invalida.");
@@ -61,7 +63,8 @@ public class posiciones {
         }
     }
 
-    static void registrarPartidoDesdeTeclado(Scanner sc, String[] equipos, int[][] stats, int[][] historial, int[] numPartidos) {
+    static void registrarPartidoDesdeTeclado(Scanner sc, String[] equipos, int[][] stats, int[][] historial,
+            int[] numPartidos) {
         mostrarEquiposConIndice(equipos);
 
         System.out.print("Número del equipo 1 (1 a " + equipos.length + "): ");
@@ -99,7 +102,8 @@ public class posiciones {
         for (int p = 0; p < numPartidos[0]; p++) {
             int eq1 = historial[p][0];
             int eq2 = historial[p][1];
-            System.out.printf("%2d - %s %d - %d %s%n", p + 1, equipos[eq1], historial[p][2], historial[p][3], equipos[eq2]);
+            System.out.printf("%2d - %s %d - %d %s%n", p + 1, equipos[eq1], historial[p][2], historial[p][3],
+                    equipos[eq2]);
         }
 
         System.out.print("Numero del partido a corregir: ");
@@ -190,7 +194,7 @@ public class posiciones {
 
     static void imprimirTabla(Scanner sc, String[] equipos, int[][] stats) {
         ordenarPorPuntos(equipos, stats);
-        sc.nextLine(); 
+        sc.nextLine();
         int porPagina = 10;
         int anchoNombre = calcularAnchoNombre(equipos);
 
@@ -224,5 +228,28 @@ public class posiciones {
                 System.out.println();
             }
         }
+    }
+
+    public static void escribirTabla(int[][] tabla) throws IOException {
+        FileWriter fw = new FileWriter("./posiciones.csv");
+
+        String[][] tablaEscribir = new String[tabla.length][tabla[0].length];
+        String[] lineas = new String[48];
+
+        for (int i = 0; i < tabla.length; i++) {
+            for (int j = 0; j < tabla[0].length; j++) {
+                tablaEscribir[i][j] = "" + tabla[i][j];
+            }
+        }
+
+        for (int i = 0; i < tablaEscribir.length; i++) {
+            lineas[i] = String.join(",", tablaEscribir[i]);
+        }
+
+        String archivo = String.join("\n", lineas);
+
+        fw.write(archivo);
+
+        fw.close();
     }
 }
