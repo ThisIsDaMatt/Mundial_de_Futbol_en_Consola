@@ -75,7 +75,7 @@ public class Mundial {
                                                 try {
                                                         System.out.print("Selecciona un país por su número: ");
                                                         seleccion = ConsoleInput.getInt() - 1;
-                                                        banderaSel = Banderas.getBandera(seleccion);
+                                                        banderaSel = Bandera.getBandera(seleccion);
 
                                                         break;
                                                 } catch (RuntimeException e) {
@@ -96,21 +96,21 @@ public class Mundial {
 
                                         switch (tamaño) {
                                                 case 1:
-                                                        bandera = Banderas.menor(banderaSel, 2);
+                                                        bandera = Bandera.menor(banderaSel, 2);
                                                         break;
                                                 case 2:
-                                                        bandera = Banderas.menor(banderaSel, 1);
+                                                        bandera = Bandera.menor(banderaSel, 1);
                                                         break;
                                                 case 3:
-                                                        bandera = Banderas.agrandar(banderaSel, 2);
+                                                        bandera = Bandera.agrandar(banderaSel, 2);
                                                         break;
                                                 case 4:
-                                                        bandera = Banderas.agrandar(banderaSel, 3);
+                                                        bandera = Bandera.agrandar(banderaSel, 3);
                                                         break;
                                                 default:
                                                         System.out.println(
                                                                         "Opción inválida. Se mostrará la bandera en tamaño mediano.");
-                                                        bandera = Banderas.menor(banderaSel, 1);
+                                                        bandera = Bandera.menor(banderaSel, 1);
                                         }
 
                                         for (int i = 0; i < bandera.length; i++) {
@@ -124,7 +124,7 @@ public class Mundial {
 
                                 case 2:
                                         System.out.println("La tabla de posiciones ");
-                                        Posicione.posiciones();
+                                        Posiciones.posiciones();
                                         break;
 
                                 case 3:
