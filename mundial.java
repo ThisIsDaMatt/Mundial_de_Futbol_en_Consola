@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class mundial {
+public class Mundial {
         public static void main(String[] args) throws IOException {
 
                 while (true) {
@@ -75,7 +75,7 @@ public class mundial {
                                                 try {
                                                         System.out.print("Selecciona un país por su número: ");
                                                         seleccion = ConsoleInput.getInt() - 1;
-                                                        banderaSel = banderas.getBandera(seleccion);
+                                                        banderaSel = Banderas.getBandera(seleccion);
 
                                                         break;
                                                 } catch (RuntimeException e) {
@@ -96,21 +96,21 @@ public class mundial {
 
                                         switch (tamaño) {
                                                 case 1:
-                                                        bandera = banderas.menor(banderaSel, 2);
+                                                        bandera = Banderas.menor(banderaSel, 2);
                                                         break;
                                                 case 2:
-                                                        bandera = banderas.menor(banderaSel, 1);
+                                                        bandera = Banderas.menor(banderaSel, 1);
                                                         break;
                                                 case 3:
-                                                        bandera = banderas.agrandar(banderaSel, 2);
+                                                        bandera = Banderas.agrandar(banderaSel, 2);
                                                         break;
                                                 case 4:
-                                                        bandera = banderas.agrandar(banderaSel, 3);
+                                                        bandera = Banderas.agrandar(banderaSel, 3);
                                                         break;
                                                 default:
                                                         System.out.println(
                                                                         "Opción inválida. Se mostrará la bandera en tamaño mediano.");
-                                                        bandera = banderas.menor(banderaSel, 1);
+                                                        bandera = Banderas.menor(banderaSel, 1);
                                         }
 
                                         for (int i = 0; i < bandera.length; i++) {
@@ -124,7 +124,7 @@ public class mundial {
 
                                 case 2:
                                         System.out.println("La tabla de posiciones ");
-                                        posiciones.posiciones();
+                                        Posiciones.posiciones();
                                         break;
 
                                 case 3:

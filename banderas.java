@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class banderas {
+public class Banderas {
 
     private static final int FILAS = 10;
     private static final int COLS = 15;
