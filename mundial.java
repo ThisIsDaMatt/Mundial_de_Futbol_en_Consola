@@ -124,7 +124,7 @@ public class Mundial {
 
                                 case 2:
                                         System.out.println("La tabla de posiciones ");
-                                        Posiciones.posiciones();
+                                        Posicione.posiciones();
                                         break;
 
                                 case 3:
