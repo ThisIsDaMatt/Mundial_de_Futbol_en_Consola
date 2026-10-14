@@ -35,7 +35,7 @@ public class Posiciones {
             System.out.println("3. Corregir un partido ya registrado");
             System.out.println("4. Salir");
             System.out.print("Elige una opción: ");
-            int opcion = sc.nextInt();
+            int opcion = ConsoleInput.getMayi0();
 
             switch (opcion) {
                 case 1:
@@ -81,7 +81,7 @@ public class Posiciones {
 
                     break;
                 default:
-                    System.out.println("Opcion invalida.");
+                    System.out.print("Intenta de nuevo");
             }
         }
 
@@ -97,30 +97,38 @@ public class Posiciones {
     static void registrarPartidoDesdeTeclado(Scanner sc, String[] equipos, int[][] stats, int[][] historial,
             int numPartidos) {
         mostrarEquiposConIndice(equipos);
-
+        
         System.out.print("Número del equipo 1 (1 a " + equipos.length + "): ");
-        int i = sc.nextInt() - 1;
+        int i = ConsoleInput.getMay0() - 1;
         System.out.print("Número del equipo 2 (1 a " + equipos.length + "): ");
-        int j = sc.nextInt() - 1;
+        int j = ConsoleInput.getMay0() - 1;
 
         if (i < 0 || i >= equipos.length || j < 0 || j >= equipos.length || i == j) {
-            System.out.println("Numeros invalidos.");
+            System.out.println("Intenta de nuevo");
             return;
         }
-
+        
         System.out.print("Goles de " + equipos[i] + ": ");
-        int golesI = sc.nextInt();
+        int golesI = ConsoleInput.getMayi0();
         System.out.print("Goles de " + equipos[j] + ": ");
-        int golesJ = sc.nextInt();
+        int golesJ = ConsoleInput.getMayi0();
 
         int p = numPartidos;
         historial[p][0] = i;
         historial[p][1] = j;
         historial[p][2] = golesI;
         historial[p][3] = golesJ;
+         if (golesI < 0 || golesJ < 0) {
+            System.out.println("Intenta de nuevo");
+            return;
+        }
 
+        else{
         registrarPartido(stats, i, j, golesI, golesJ);
         System.out.println("El resultado ha sido registrado.");
+        }
+        
+
     }
 
     static void corregirPartido(Scanner sc, String[] equipos, int[][] stats, int[][] historial, int numPartidos) {
@@ -145,15 +153,24 @@ public class Posiciones {
         }
 
         System.out.print("Nuevos goles de " + equipos[historial[p][0]] + ": ");
-        int nuevosGolesI = sc.nextInt();
+        int nuevosGolesI = ConsoleInput.getMayi0();
         System.out.print("Nuevos goles de " + equipos[historial[p][1]] + ": ");
-        int nuevosGolesJ = sc.nextInt();
+        int nuevosGolesJ = ConsoleInput.getMayi0();
+
+        if (nuevosGolesI < 0 || nuevosGolesJ < 0) {
+            System.out.println("Intenta de nuevo");
+            return;
+        }
+        else{
 
         historial[p][2] = nuevosGolesI;
         historial[p][3] = nuevosGolesJ;
 
         recalcularEstadisticas(stats, historial, numPartidos);
         System.out.println("Partido corregido y estadisticas recalculadas.");
+        }
+
+        
     }
 
     static void recalcularEstadisticas(int[][] stats, int[][] historial, int totalPartidos) {
@@ -261,6 +278,7 @@ public class Posiciones {
     }
 
     public static void escribirTabla(int[][] tabla) throws IOException {
+        
         FileWriter fw = new FileWriter("./posiciones.csv");
 
         String[][] tablaEscribir = new String[tabla.length][tabla[0].length];

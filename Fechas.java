@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 public class Fechas {
     public static void fecha() {
+        Scanner sc = new Scanner(System.in);
         String rayita = "+-------+------------------+----------------------------------+--------------------+----------------------------------------+";
 
         System.out.println("COPA MUNDIAL FIFA 2026  |  Calendario oficial previo al torneo");
@@ -8,11 +11,14 @@ public class Fechas {
         System.out.println(rayita);
         System.out.println("| N     | Fecha y hora COL | Equipos                          | Fase               | Estadio                                |");
         System.out.println(rayita);
-
         System.out.println("| 1     | 11/06 14:00      | Mexico vs Sudafrica              | Fase de grupos     | Estadio Azteca (Ciudad de Mexico)      |");
         System.out.println("| 2     | 11/06 21:00      | Corea del Sur vs Chequia         | Fase de grupos     | Estadio Akron (Guadalajara)            |");
         System.out.println("| 3     | 12/06 14:00      | Canada vs Bosnia y Herzegovina   | Fase de grupos     | BMO Field (Toronto)                    |");
         System.out.println("| 4     | 12/06 20:00      | Estados Unidos vs Paraguay       | Fase de grupos     | SoFi Stadium (Los Angeles)             |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 5     | 13/06 14:00      | Catar vs Suiza                   | Fase de grupos     | Levi's Stadium (Santa Clara)           |");
         System.out.println("| 6     | 13/06 17:00      | Brasil vs Marruecos              | Fase de grupos     | MetLife Stadium (Nueva York/NJ)        |");
         System.out.println("| 7     | 13/06 20:00      | Haiti vs Escocia                 | Fase de grupos     | Gillette Stadium (Boston)              |");
@@ -23,6 +29,10 @@ public class Fechas {
         System.out.println("| 12    | 14/06 21:00      | Suecia vs Tunez                  | Fase de grupos     | Estadio BBVA (Monterrey)               |");
         System.out.println("| 13    | 15/06 11:00      | Espana vs Cabo Verde             | Fase de grupos     | Mercedes-Benz Stadium (Atlanta)        |");
         System.out.println("| 14    | 15/06 14:00      | Belgica vs Egipto                | Fase de grupos     | Lumen Field (Seattle)                  |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 15    | 15/06 17:00      | Arabia Saudita vs Uruguay        | Fase de grupos     | Hard Rock Stadium (Miami)              |");
         System.out.println("| 16    | 15/06 20:00      | Iran vs Nueva Zelanda            | Fase de grupos     | SoFi Stadium (Los Angeles)             |");
         System.out.println("| 17    | 16/06 14:00      | Francia vs Senegal               | Fase de grupos     | MetLife Stadium (Nueva York/NJ)        |");
@@ -33,6 +43,10 @@ public class Fechas {
         System.out.println("| 22    | 17/06 15:00      | Inglaterra vs Croacia            | Fase de grupos     | AT&T Stadium (Dallas)                  |");
         System.out.println("| 23    | 17/06 18:00      | Ghana vs Panama                  | Fase de grupos     | BMO Field (Toronto)                    |");
         System.out.println("| 24    | 17/06 21:00      | Uzbekistan vs Colombia           | Fase de grupos     | Estadio Azteca (Ciudad de Mexico)      |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 25    | 18/06 11:00      | Chequia vs Sudafrica             | Fase de grupos     | Mercedes-Benz Stadium (Atlanta)        |");
         System.out.println("| 26    | 18/06 14:00      | Suiza vs Bosnia y Herzegovina    | Fase de grupos     | SoFi Stadium (Los Angeles)             |");
         System.out.println("| 27    | 18/06 17:00      | Canada vs Catar                  | Fase de grupos     | BC Place (Vancouver)                   |");
@@ -43,6 +57,10 @@ public class Fechas {
         System.out.println("| 32    | 19/06 22:00      | Turquia vs Paraguay              | Fase de grupos     | Levi's Stadium (Santa Clara)           |");
         System.out.println("| 33    | 20/06 12:00      | Paises Bajos vs Suecia           | Fase de grupos     | NRG Stadium (Houston)                  |");
         System.out.println("| 34    | 20/06 16:00      | Alemania vs Costa de Marfil      | Fase de grupos     | BMO Field (Toronto)                    |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 35    | 20/06 19:00      | Ecuador vs Curazao               | Fase de grupos     | Arrowhead Stadium (Kansas City)        |");
         System.out.println("| 36    | 20/06 23:00      | Tunez vs Japon                   | Fase de grupos     | Estadio BBVA (Monterrey)               |");
         System.out.println("| 37    | 21/06 11:00      | Espana vs Arabia Saudita         | Fase de grupos     | Mercedes-Benz Stadium (Atlanta)        |");
@@ -53,6 +71,10 @@ public class Fechas {
         System.out.println("| 42    | 22/06 16:00      | Francia vs Irak                  | Fase de grupos     | Lincoln Financial Field (Filadelfia)   |");
         System.out.println("| 43    | 22/06 19:00      | Noruega vs Senegal               | Fase de grupos     | MetLife Stadium (Nueva York/NJ)        |");
         System.out.println("| 44    | 22/06 22:00      | Jordania vs Argelia              | Fase de grupos     | Levi's Stadium (Santa Clara)           |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 45    | 23/06 12:00      | Portugal vs Uzbekistan           | Fase de grupos     | NRG Stadium (Houston)                  |");
         System.out.println("| 46    | 23/06 15:00      | Inglaterra vs Ghana              | Fase de grupos     | Gillette Stadium (Boston)              |");
         System.out.println("| 47    | 23/06 18:00      | Panama vs Croacia                | Fase de grupos     | BMO Field (Toronto)                    |");
@@ -63,6 +85,10 @@ public class Fechas {
         System.out.println("| 52    | 24/06 17:00      | Escocia vs Brasil                | Fase de grupos     | Hard Rock Stadium (Miami)              |");
         System.out.println("| 53    | 24/06 20:00      | Chequia vs Mexico                | Fase de grupos     | Estadio Azteca (Ciudad de Mexico)      |");
         System.out.println("| 54    | 24/06 20:00      | Sudafrica vs Corea del Sur       | Fase de grupos     | Estadio BBVA (Monterrey)               |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 55    | 25/06 15:00      | Curazao vs Costa de Marfil       | Fase de grupos     | Lincoln Financial Field (Filadelfia)   |");
         System.out.println("| 56    | 25/06 15:00      | Ecuador vs Alemania              | Fase de grupos     | MetLife Stadium (Nueva York/NJ)        |");
         System.out.println("| 57    | 25/06 18:00      | Japon vs Suecia                  | Fase de grupos     | AT&T Stadium (Dallas)                  |");
@@ -73,6 +99,10 @@ public class Fechas {
         System.out.println("| 62    | 26/06 14:00      | Senegal vs Irak                  | Fase de grupos     | BMO Field (Toronto)                    |");
         System.out.println("| 63    | 26/06 19:00      | Uruguay vs Espana                | Fase de grupos     | Estadio Akron (Guadalajara)            |");
         System.out.println("| 64    | 26/06 19:00      | Cabo Verde vs Arabia Saudita     | Fase de grupos     | NRG Stadium (Houston)                  |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 65    | 26/06 22:00      | Egipto vs Iran                   | Fase de grupos     | Lumen Field (Seattle)                  |");
         System.out.println("| 66    | 26/06 22:00      | Nueva Zelanda vs Belgica         | Fase de grupos     | BC Place (Vancouver)                   |");
         System.out.println("| 67    | 27/06 16:00      | Panama vs Inglaterra             | Fase de grupos     | MetLife Stadium (Nueva York/NJ)        |");
@@ -81,9 +111,12 @@ public class Fechas {
         System.out.println("| 70    | 27/06 18:30      | RD Congo vs Uzbekistan           | Fase de grupos     | Mercedes-Benz Stadium (Atlanta)        |");
         System.out.println("| 71    | 27/06 21:00      | Jordania vs Argentina            | Fase de grupos     | AT&T Stadium (Dallas)                  |");
         System.out.println("| 72    | 27/06 21:00      | Argelia vs Austria               | Fase de grupos     | Arrowhead Stadium (Kansas City)        |");
-
         System.out.println("| 73    | 28/06 14:00      | 2A vs 2B                         | Ronda de 32        | SoFi Stadium (Los Angeles)             |");
         System.out.println("| 74    | 29/06 15:30      | 1E vs 3.o A/B/C/D/F              | Ronda de 32        | Gillette Stadium (Boston)              |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 75    | 29/06 20:00      | 1F vs 2C                         | Ronda de 32        | Estadio BBVA (Monterrey)               |");
         System.out.println("| 76    | 29/06 12:00      | 1C vs 2F                         | Ronda de 32        | NRG Stadium (Houston)                  |");
         System.out.println("| 77    | 30/06 16:00      | 1I vs 3.o C/D/F/G/H              | Ronda de 32        | MetLife Stadium (Nueva York/NJ)        |");
@@ -94,20 +127,26 @@ public class Fechas {
         System.out.println("| 82    | 01/07 15:00      | 1G vs 3.o A/E/H/I/J              | Ronda de 32        | Lumen Field (Seattle)                  |");
         System.out.println("| 83    | 02/07 18:00      | 2K vs 2L                         | Ronda de 32        | BMO Field (Toronto)                    |");
         System.out.println("| 84    | 02/07 14:00      | 1H vs 2J                         | Ronda de 32        | SoFi Stadium (Los Angeles)             |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 85    | 02/07 22:00      | 1B vs 3.o E/F/G/I/J              | Ronda de 32        | BC Place (Vancouver)                   |");
         System.out.println("| 86    | 03/07 17:00      | 1J vs 2H                         | Ronda de 32        | Hard Rock Stadium (Miami)              |");
         System.out.println("| 87    | 03/07 20:30      | 1K vs 3.o D/E/I/J/L              | Ronda de 32        | Arrowhead Stadium (Kansas City)        |");
         System.out.println("| 88    | 03/07 13:00      | 2D vs 2G                         | Ronda de 32        | AT&T Stadium (Dallas)                  |");
-
         System.out.println("| 89    | 04/07 16:00      | Ganador M74 vs Ganador M77       | Octavos de final   | Lincoln Financial Field (Filadelfia)   |");
         System.out.println("| 90    | 04/07 12:00      | Ganador M73 vs Ganador M75       | Octavos de final   | NRG Stadium (Houston)                  |");
         System.out.println("| 91    | 05/07 15:00      | Ganador M76 vs Ganador M78       | Octavos de final   | MetLife Stadium (Nueva York/NJ)        |");
         System.out.println("| 92    | 05/07 20:00      | Ganador M79 vs Ganador M80       | Octavos de final   | Estadio Azteca (Ciudad de Mexico)      |");
         System.out.println("| 93    | 06/07 14:00      | Ganador M83 vs Ganador M84       | Octavos de final   | AT&T Stadium (Dallas)                  |");
         System.out.println("| 94    | 06/07 19:00      | Ganador M81 vs Ganador M82       | Octavos de final   | Lumen Field (Seattle)                  |");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para continuar");
+        System.out.print(rayita);
+        sc.nextLine();
         System.out.println("| 95    | 07/07 11:00      | Ganador M86 vs Ganador M88       | Octavos de final   | Mercedes-Benz Stadium (Atlanta)        |");
         System.out.println("| 96    | 07/07 15:00      | Ganador M85 vs Ganador M87       | Octavos de final   | BC Place (Vancouver)                   |");
-
         System.out.println("| 97    | 09/07 15:00      | Ganador M89 vs Ganador M90       | Cuartos de final   | Gillette Stadium (Boston)              |");
         System.out.println("| 98    | 10/07 14:00      | Ganador M93 vs Ganador M94       | Cuartos de final   | SoFi Stadium (Los Angeles)             |");
         System.out.println("| 99    | 11/07 16:00      | Ganador M91 vs Ganador M92       | Cuartos de final   | Hard Rock Stadium (Miami)              |");
@@ -116,11 +155,14 @@ public class Fechas {
         System.out.println("| 102   | 15/07 14:00      | Ganador M99 vs Ganador M100      | Semifinal          | Mercedes-Benz Stadium (Atlanta)        |");
         System.out.println("| 103   | 18/07 16:00      | Perdedor M101 vs Perdedor M102   | Tercer puesto      | Hard Rock Stadium (Miami)              |");
         System.out.println("| 104   | 19/07 14:00      | Ganador M101 vs Ganador M102     | Final              | MetLife Stadium (Nueva York/NJ)        |");
-
         System.out.println(rayita);
         System.out.println("Notacion eliminatorias:");
         System.out.println("  1A = 1.o Grupo A    2B = 2.o Grupo B");
         System.out.println("  3.o A/B/C/D/F = mejor 3.o entre esos grupos (segun tabla FIFA)");
         System.out.println("  Ganador M73 = ganador del partido 73");
+        System.out.println(rayita);
+        System.out.println("Presiona ENTER para salir");
+        System.out.print(rayita);
+        sc.nextLine();
     }
 }

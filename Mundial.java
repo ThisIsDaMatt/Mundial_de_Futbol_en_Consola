@@ -109,6 +109,8 @@ public class Mundial {
 
                                         System.out.print("Ingrese una opción: ");
                                         int tamaño = ConsoleInput.getInt();
+                                        System.out.println("=====================================================================");
+
 
                                         switch (tamaño) {
                                                 case 1:
@@ -160,7 +162,8 @@ public class Mundial {
 
                                 default:
                                         System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
-
+                                        System.out.println("Presiona ENTER para continuar");
+			                sc.nextLine();
                         }
 
                 }
