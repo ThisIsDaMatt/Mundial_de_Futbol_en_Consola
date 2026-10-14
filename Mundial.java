@@ -1,7 +1,10 @@
 import java.io.*;
+import java.util.Scanner;
 
 public class Mundial {
         public static void main(String[] args) throws IOException {
+
+                Scanner sc = new Scanner(System.in);
 
                 while (true) {
 
@@ -59,13 +62,25 @@ public class Mundial {
                                         "\033[48;5;88m", // Cafe
                         };
 
+
+        
                         switch (opcion) {
                                 case 1:
                                         System.out.println("Lista de paises:");
-
-                                        for (int i = 0; i < paises.length; i++) {
+                                        
+                                        
+                                        for (int i = 0; i < paises.length; i++) {   
+                                                if (i%10 == 0 && i > 0) {
+                                                        System.out.println("");
+                                                        System.out.println("ENTER para ver más");
+                                                        sc.nextLine();   
+                                                        
+                                                }
                                                 System.out.println((i + 1) + ") " + paises[i]);
+                                                
                                         }
+                                       
+                                
 
                                         byte[][] banderaSel;
                                         byte[][] bandera;
@@ -73,7 +88,7 @@ public class Mundial {
 
                                         while (true) {
                                                 try {
-                                                        System.out.print("Selecciona un país por su número: ");
+                                                        System.out.println("");                                                        System.out.print("Selecciona un país por su número: ");
                                                         seleccion = ConsoleInput.getInt() - 1;
                                                         banderaSel = Banderas.getBandera(seleccion);
 
@@ -84,6 +99,7 @@ public class Mundial {
                                         }
 
                                         System.out.println(paises[seleccion]);
+                                        System.out.println("=====================================================================");
 
                                         System.out.println("Escoge el tamaño de la bandera.");
                                         System.out.println("[1] Ícono\n" +
@@ -120,7 +136,14 @@ public class Mundial {
                                                 System.out.println("\033[0m");
                                         }
 
+                                        System.out.println(paises[seleccion]);
+                                        System.out.println(InfoPaises.INFO[seleccion]);
+                                        System.out.println("=====================================================================");
+                                        System.out.println("Presiona ENTER para volver al menú principal.");
+                                        sc.nextLine();
                                         break;
+
+                                                                        
 
                                 case 2:
                                         System.out.println("La tabla de posiciones ");
